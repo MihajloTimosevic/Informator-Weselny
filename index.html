@@ -3,259 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuzia i Michał - 18 Kwietnia 2026</title>
-    <link href="[https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap)" rel="stylesheet">
+    <title>Zuzia i Michał - 18.04.2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-green: #2a4434;
-            --accent-gold: #cfa862;
-            --text-main: #333333;
-            --text-light: #555555;
+            --primary-green: #1b3022;
+            --accent-gold: #c5a059;
+            --card-bg: rgba(255, 255, 255, 0.92);
+            --text-dark: #2c2c2c;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            background: linear-gradient(135deg, #eff3f1 0%, #e4e9e6 100%);
-            color: var(--text-main);
-            line-height: 1.8;
-            min-height: 100vh;
-        }
-
-        .hero {
-            height: 65vh;
-            background: linear-gradient(rgba(42, 68, 52, 0.5), rgba(42, 68, 52, 0.85)), 
-                        url('[https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000](https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000)');
+            padding: 0;
+            color: var(--text-dark);
+            /* GŁÓWNE TŁO GÓRSKIE DLA CAŁEJ STRONY */
+            background-image: linear-gradient(rgba(27, 48, 34, 0.6), rgba(27, 48, 34, 0.6)), 
+                              url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            border-bottom: 5px solid var(--accent-gold);
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3.2rem, 8vw, 5rem);
-            margin: 0;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            letter-spacing: 5px;
-            margin-top: 15px;
-            font-weight: 300;
-            text-transform: uppercase;
+            line-height: 1.8;
         }
 
         .container {
             max-width: 800px;
-            margin: -50px auto 60px;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 100px 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 5rem);
+            margin: 0;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-top: 10px;
         }
 
         section {
-            background: #ffffff;
-            padding: 45px 40px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(42, 68, 52, 0.08);
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
             color: var(--primary-green);
             font-size: 2.2rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
         }
 
-        .divider {
-            width: 60px;
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
             height: 2px;
-            background-color: var(--accent-gold);
-            margin: 0 auto 25px;
+            background: var(--accent-gold);
+            margin: 10px auto 0;
         }
 
         .time {
             font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             color: var(--accent-gold);
             display: block;
-            font-weight: 600;
-            line-height: 1.2;
+            font-weight: 700;
             margin-bottom: 10px;
         }
 
-        .highlight-text {
+        .highlight {
             color: var(--primary-green);
             font-weight: 600;
-            font-size: 1.15rem;
         }
 
-        .map-container {
-            margin: 30px 0 20px;
-            border-radius: 8px;
+        /* STYLIZACJA MAPY */
+        .map-wrapper {
+            margin: 30px 0;
+            border-radius: 10px;
             overflow: hidden;
-            border: 1px solid #eaeaea;
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
         }
 
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .map-wrapper iframe {
+            display: block;
             width: 100%;
-            height: 100%;
+            height: 400px;
+            border: 0;
         }
 
+        /* PRZYCISKI */
         .btn {
             display: inline-block;
+            margin-top: 20px;
             padding: 15px 35px;
             background: var(--primary-green);
             color: white !important;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 0.95rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.3s ease;
-            margin-top: 15px;
-            box-shadow: 0 4px 15px rgba(42, 68, 52, 0.2);
+            letter-spacing: 2px;
+            transition: 0.3s;
+            font-size: 0.9rem;
         }
 
-        .btn:hover { 
-            background: var(--accent-gold); 
+        .btn:hover {
+            background: var(--accent-gold);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(207, 168, 98, 0.3);
         }
 
-        .schedule-row { margin: 25px 0; }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-green) !important;
+            border: 2px solid var(--primary-green);
+        }
 
-        .surprise-box {
-            background-color: #f8fbf9;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-gold);
-            margin-top: 35px;
+        .btn-outline:hover {
+            background: var(--primary-green);
+            color: white !important;
+        }
+
+        /* HARMONOGRAM */
+        .plan-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .plan-item:last-child { border: none; }
+
+        .surprise-text {
+            background: #fdf8ef;
+            padding: 20px;
+            border-radius: 10px;
             font-style: italic;
-            color: var(--text-light);
+            margin-top: 20px;
+            border-left: 4px solid var(--accent-gold);
         }
 
-        .gift-box {
-            background: linear-gradient(135deg, var(--primary-green), #1b2e23);
+        /* STOPKA HUMORYSTYCZNA */
+        .humor-card {
+            background: var(--primary-green);
             color: white;
             padding: 60px 40px;
-            border-radius: 12px;
-            margin-top: 50px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(42, 68, 52, 0.2);
         }
 
-        .gift-box h3 {
+        .humor-card h3 {
             font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             color: var(--accent-gold);
-            font-size: 2.2rem;
-            margin-top: 0;
             margin-bottom: 20px;
-            font-weight: 400;
         }
 
-        .gift-box p {
-            font-size: 1.15rem;
-            margin: 10px 0;
+        @media (max-width: 600px) {
+            section { padding: 30px 20px; }
+            header h1 { font-size: 2.8rem; }
         }
-
     </style>
 </head>
 <body>
 
-    <header class="hero">
+    <header>
         <h1>Zuzia & Michał</h1>
-        <p>18 Kwietnia 2026 r.</p>
+        <p>18 Kwietnia 2026</p>
     </header>
 
     <div class="container">
         
         <section>
-            <h2>Ceremonia zaślubin</h2>
-            <div class="divider"></div>
+            <h2>Ceremonia Zaślubin</h2>
             <span class="time">16:00</span>
-            <p class="highlight-text">Parafia św. Jerzego i Matki Bożej Różańcowej w Wałbrzychu</p>
-            <p style="color: var(--text-light);">ul. Świętego Jerzego 4, 58-304 Wałbrzych</p>
+            <p><span class="highlight">Parafia św. Jerzego i Matki Bożej Różańcowej</span><br>
+            ul. Świętego Jerzego 4, 58-304 Wałbrzych</p>
         </section>
 
         <section>
             <h2>Wesele</h2>
-            <div class="divider"></div>
-            <p>Wesele odbędzie się w <span class="highlight-text">Hotelu Maria</span> przy ulicy Wrocławska 134B, 58-306 Wałbrzych.</p>
+            <p>Świętujemy w <span class="highlight">Hotelu Maria</span><br>
+            ul. Wrocławska 134B, 58-306 Wałbrzych</p>
             
-            <div class="map-container">
-                <iframe src="[https://maps.google.com/maps?q=Hotel%20Maria,%20Wroc%C5%82awska%20134B,%20Wa%C5%82brzych&t=&z=15&ie=UTF8&iwloc=&output=embed](https://maps.google.com/maps?q=Hotel%20Maria,%20Wroc%C5%82awska%20134B,%20Wa%C5%82brzych&t=&z=15&ie=UTF8&iwloc=&output=embed)" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2522.686562045582!2d16.311749877141535!3d50.78135896353155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470e53e4b786f05b%3A0xc07a898f0967396!2sHotel%20Maria!5e0!3m2!1spl!2spl!4v1711974000000!5m2!1spl!2spl" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
             </div>
             
-            <a href="[https://goo.gl/maps/5RvxmY7b6kXZ1](https://goo.gl/maps/5RvxmY7b6kXZ1)" target="_blank" class="btn">📍 Nawiguj do Hotelu</a>
+            <a href="https://maps.app.goo.gl/5RvxmY7b6kXZ1" target="_blank" class="btn">📍 Otwórz nawigację</a>
         </section>
 
         <section>
-            <h2>Harmonogram</h2>
-            <div class="divider"></div>
-            
-            <div class="schedule-row">
-                <span class="time" style="font-size: 2rem;">18:00</span> 
-                <span class="highlight-text">Obiad</span>
+            <h2>Plan Dnia</h2>
+            <div class="plan-item">
+                <span class="highlight" style="font-size: 1.3rem;">18:00</span> — Uroczysty Obiad
             </div>
-            
-            <div class="schedule-row">
-                <span class="time" style="font-size: 2rem;">00:00</span> 
-                <span class="highlight-text">Oczepiny</span>
+            <div class="plan-item">
+                <span class="highlight" style="font-size: 1.3rem;">00:00</span> — Oczepiny
             </div>
-            
-            <div class="surprise-box">
-                <p style="margin: 0;">W trakcie imprezy pojawią się niespodzianki, których nie opisujemy w ramach harmonogramu. Wytężcie wzrok i słuch.</p>
+            <div class="surprise-text">
+                W trakcie imprezy pojawią się niespodzianki, których nie opisujemy w ramach harmonogramu. Wytężcie wzrok i słuch.
             </div>
         </section>
 
         <section>
-            <h2>Wspólny dysk</h2>
-            <div class="divider"></div>
-            <p>Zachęcamy do wrzucania swoich zdjęć na wspólny dysk.</p>
-            <a href="[https://photos.app.goo.gl/MJDPTewJrFo76qVy8](https://photos.app.goo.gl/MJDPTewJrFo76qVy8)" target="_blank" class="btn">📸 Dodaj zdjęcia</a>
-        </section>
-
-        <section>
-            <h2>Życzenia audio</h2>
-            <div class="divider"></div>
-            <p>Na sali znajduje się <span class="highlight-text">mikrofon i rejestrator dźwięku</span>, zachęcamy do nagrania życzeń audio.</p>
+            <h2>Wspólny Dysk</h2>
+            <p>Podzielcie się z nami swoimi ujęciami z tego dnia!</p>
+            <a href="https://photos.app.goo.gl/MJDPTewJrFo76qVy8" target="_blank" class="btn btn-outline">📸 Dodaj zdjęcia</a>
         </section>
 
         <section>
             <h2>Poprawiny</h2>
-            <div class="divider"></div>
-            <p>Po weselu przewidujemy poprawiny, jeżeli macie ochotę przedłużyć ten weekend i świętować z nami w dniu jutrzejszym zapiszcie się do listy poprawinowej.</p>
-            <p class="highlight-text" style="margin-top: 20px;">Zapisy zbieramy do 22:00</p>
-            <p style="font-size: 0.9rem; color: var(--text-light); font-style: italic;">(Lista dostępna jest na sali)</p>
+            <p>Jeżeli macie ochotę przedłużyć ten weekend i świętować z nami jutro, zapiszcie się do listy poprawinowej.</p>
+            <p class="highlight">Zapisy zbieramy do 22:00 na sali.</p>
         </section>
 
-        <div class="gift-box">
-            <h3>Prezent</h3>
-            <p style="font-weight: 300;">Najlepszym prezentem jest wasza obecność, bawimy się, nie śpimy.</p>
-            <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; color: var(--accent-gold); margin-top: 20px;">Wynoszą nas za ręce i nogi.</p>
-        </div>
+        <section>
+            <h2>Audio Życzenia</h2>
+            <p>Na sali znajduje się mikrofon i rejestrator dźwięku. Zachęcamy do nagrania kilku słów dla nas!</p>
+        </section>
+
+        <section class="humor-card">
+            <h3>Prezenty</h3>
+            <p>Najlepszym prezentem jest wasza obecność!</p>
+            <p><strong>Bawimy się, nie śpimy.</strong></p>
+            <p style="font-style: italic; opacity: 0.9;">Wynoszą nas za ręce i nogi.</p>
+        </section>
 
     </div>
 
