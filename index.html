@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuzia i Michał - Informator Ślubny</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <title>Informator Weselny - Zuzia i Michał</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-green: #2d4c3b; /* Głęboka zieleń z Twojej grafiki */
-            --light-green: #e9f0ec;
+            --primary-green: #2d4c3b; 
             --accent-gold: #c5a059;
-            --text-dark: #333;
-            --bg-white: #fffdfb;
+            --light-bg: #f9fbf9;
+            --text-dark: #2c2c2c;
         }
 
         body {
@@ -19,151 +18,99 @@
             margin: 0;
             padding: 0;
             color: var(--text-dark);
-            background-color: var(--bg-white);
-            line-height: 1.6;
+            background-color: var(--light-bg);
+            line-height: 1.7;
         }
 
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             color: var(--primary-green);
-            font-weight: 400;
+            margin-bottom: 20px;
         }
 
-        /* Sekcja Hero - Góry */
-        .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.8)), 
-                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000'); /* Tymczasowe tło gór */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 8px solid var(--primary-green);
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        /* Kontener */
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
             text-align: center;
         }
 
-        /* Sekcje */
-        section {
-            padding: 60px 0;
-            border-bottom: 1px solid var(--light-green);
+        /* Hero Section */
+        header {
+            padding: 80px 20px;
+            background: #fff;
+            border-bottom: 5px solid var(--primary-green);
         }
 
+        header h1 { font-size: 3rem; margin: 0; }
+        header p { font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600; }
+
+        /* Sekcje */
+        section {
+            margin-bottom: 60px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .highlight {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        /* Harmonogram */
         .timeline {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .event {
-            margin: 20px 0;
-            padding: 20px;
-            background: var(--light-green);
-            width: 80%;
-            border-radius: 5px;
+            padding: 15px;
+            border-left: 3px solid var(--accent-gold);
+            background: #fdfdfd;
+            text-align: left;
+            margin-left: 20px;
         }
 
         .time {
             font-weight: bold;
+            font-size: 1.3rem;
             color: var(--primary-green);
             display: block;
-            font-size: 1.2rem;
         }
 
-        /* Stylizacja przycisku RSVP */
-        .btn {
+        /* Mapa */
+        .map-container {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        /* Stopka z humorem */
+        .humor-box {
+            font-style: italic;
+            background: var(--primary-green);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .humor-box p { margin: 5px 0; }
+
+        .btn-map {
             display: inline-block;
-            padding: 15px 40px;
-            background-color: var(--primary-green);
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: var(--primary-green);
             color: white;
             text-decoration: none;
-            border-radius: 30px;
-            margin-top: 20px;
+            border-radius: 5px;
             transition: 0.3s;
         }
 
-        .btn:hover {
-            background-color: var(--accent-gold);
-        }
-
-        /* Góry na dole strony - jak w Twoim projekcie */
-        .footer-mountains {
-            width: 100%;
-            height: 200px;
-            background-image: url('https://i.imgur.com/8N6pYpB.png'); /* Tutaj wstawimy grafikę podobną do Twojej */
-            background-repeat: repeat-x;
-            background-size: contain;
-        }
-    </style>
-</head>
-<body>
-
-    <header class="hero">
-        <h1>Zuzia & Michał</h1>
-        <p>15 Sierpnia 2026</p>
-    </header>
-
-    <div class="container">
-        <section id="welcome">
-            <h2>Cieszymy się, że będziecie z nami!</h2>
-            <p>Tutaj znajdziecie wszystkie najważniejsze informacje dotyczące naszego wielkiego dnia.</p>
-        </section>
-
-        <section id="schedule">
-            <h2>Harmonogram Dnia</h2>
-            <div class="timeline">
-                <div class="event">
-                    <span class="time">16:00</span>
-                    <h3>Ceremonia Ślubna</h3>
-                    <p>Kościół pw. św. Anny w Zakopanem</p>
-                </div>
-                <div class="event">
-                    <span class="time">18:00</span>
-                    <h3>Wesele</h3>
-                    <p>Karczma pod Tatrami - Rozpoczęcie zabawy</p>
-                </div>
-                <div class="event">
-                    <span class="time">24:00</span>
-                    <h3>Oczepiny</h3>
-                    <p>Tradycyjne zabawy i tort</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="rsvp">
-            <h2>Potwierdzenie Przybycia</h2>
-            <p>Prosimy o potwierdzenie obecności do 1 lipca 2026 r.</p>
-            <a href="https://forms.gle/twoj-link" class="btn">Potwierdzam przybycie</a>
-        </section>
-
-        <section id="faq">
-            <h2>Informacje Praktyczne</h2>
-            <p><strong>Prezenty:</strong> Największym prezentem będzie dla nas Wasza obecność. Jeśli jednak chcecie nas obdarować, będziemy wdzięczni za "kopertę" lub wsparcie naszej podróży poślubnej.</p>
-            <p><strong>Dzieci:</strong> Zapraszamy serdecznie z najmłodszymi!</p>
-        </section>
-    </div>
-
-    <div class="footer-mountains"></div>
-
-</body>
-</html>
+        .btn-map:
