@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zuzia i Michał - 18 Kwietnia 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="[https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap)" rel="stylesheet">
     <style>
         :root {
-            --primary-green: #2a4434; /* Butelkowa zieleń */
-            --accent-gold: #cfa862; /* Szlachetne złoto */
+            --primary-green: #2a4434;
+            --accent-gold: #cfa862;
             --text-main: #333333;
             --text-light: #555555;
         }
@@ -16,18 +16,16 @@
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            /* Tło: mglisty, bardzo jasny górski odcień (zamiast czystej bieli) */
             background: linear-gradient(135deg, #eff3f1 0%, #e4e9e6 100%);
             color: var(--text-main);
             line-height: 1.8;
             min-height: 100vh;
         }
 
-        /* Sekcja powitalna (Hero) */
         .hero {
             height: 65vh;
             background: linear-gradient(rgba(42, 68, 52, 0.5), rgba(42, 68, 52, 0.85)), 
-                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000');
+                        url('[https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000](https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000)');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -58,7 +56,6 @@
             text-transform: uppercase;
         }
 
-        /* Kontener i Karty */
         .container {
             max-width: 800px;
             margin: -50px auto 60px;
@@ -70,7 +67,7 @@
             padding: 45px 40px;
             margin-bottom: 30px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(42, 68, 52, 0.08); /* Lekki zielony cień */
+            box-shadow: 0 10px 30px rgba(42, 68, 52, 0.08);
             text-align: center;
         }
 
@@ -106,7 +103,6 @@
             font-size: 1.15rem;
         }
 
-        /* Mapa Google (Kuloodporny format) */
         .map-container {
             margin: 30px 0 20px;
             border-radius: 8px;
@@ -126,7 +122,6 @@
             height: 100%;
         }
 
-        /* Przyciski */
         .btn {
             display: inline-block;
             padding: 15px 35px;
@@ -149,10 +144,7 @@
             box-shadow: 0 6px 20px rgba(207, 168, 98, 0.3);
         }
 
-        /* Harmonogram boxy */
-        .schedule-row {
-            margin: 25px 0;
-        }
+        .schedule-row { margin: 25px 0; }
 
         .surprise-box {
             background-color: #f8fbf9;
@@ -164,7 +156,6 @@
             color: var(--text-light);
         }
 
-        /* Prezent box (wyróżniony na dole) */
         .gift-box {
             background: linear-gradient(135deg, var(--primary-green), #1b2e23);
             color: white;
@@ -176,4 +167,97 @@
         }
 
         .gift-box h3 {
-            font-family:
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold);
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .gift-box p {
+            font-size: 1.15rem;
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Zuzia & Michał</h1>
+        <p>18 Kwietnia 2026 r.</p>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2>Ceremonia zaślubin</h2>
+            <div class="divider"></div>
+            <span class="time">16:00</span>
+            <p class="highlight-text">Parafia św. Jerzego i Matki Bożej Różańcowej w Wałbrzychu</p>
+            <p style="color: var(--text-light);">ul. Świętego Jerzego 4, 58-304 Wałbrzych</p>
+        </section>
+
+        <section>
+            <h2>Wesele</h2>
+            <div class="divider"></div>
+            <p>Wesele odbędzie się w <span class="highlight-text">Hotelu Maria</span> przy ulicy Wrocławska 134B, 58-306 Wałbrzych.</p>
+            
+            <div class="map-container">
+                <iframe src="[https://maps.google.com/maps?q=Hotel%20Maria,%20Wroc%C5%82awska%20134B,%20Wa%C5%82brzych&t=&z=15&ie=UTF8&iwloc=&output=embed](https://maps.google.com/maps?q=Hotel%20Maria,%20Wroc%C5%82awska%20134B,%20Wa%C5%82brzych&t=&z=15&ie=UTF8&iwloc=&output=embed)" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+            <a href="[https://goo.gl/maps/5RvxmY7b6kXZ1](https://goo.gl/maps/5RvxmY7b6kXZ1)" target="_blank" class="btn">📍 Nawiguj do Hotelu</a>
+        </section>
+
+        <section>
+            <h2>Harmonogram</h2>
+            <div class="divider"></div>
+            
+            <div class="schedule-row">
+                <span class="time" style="font-size: 2rem;">18:00</span> 
+                <span class="highlight-text">Obiad</span>
+            </div>
+            
+            <div class="schedule-row">
+                <span class="time" style="font-size: 2rem;">00:00</span> 
+                <span class="highlight-text">Oczepiny</span>
+            </div>
+            
+            <div class="surprise-box">
+                <p style="margin: 0;">W trakcie imprezy pojawią się niespodzianki, których nie opisujemy w ramach harmonogramu. Wytężcie wzrok i słuch.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Wspólny dysk</h2>
+            <div class="divider"></div>
+            <p>Zachęcamy do wrzucania swoich zdjęć na wspólny dysk.</p>
+            <a href="[https://photos.app.goo.gl/MJDPTewJrFo76qVy8](https://photos.app.goo.gl/MJDPTewJrFo76qVy8)" target="_blank" class="btn">📸 Dodaj zdjęcia</a>
+        </section>
+
+        <section>
+            <h2>Życzenia audio</h2>
+            <div class="divider"></div>
+            <p>Na sali znajduje się <span class="highlight-text">mikrofon i rejestrator dźwięku</span>, zachęcamy do nagrania życzeń audio.</p>
+        </section>
+
+        <section>
+            <h2>Poprawiny</h2>
+            <div class="divider"></div>
+            <p>Po weselu przewidujemy poprawiny, jeżeli macie ochotę przedłużyć ten weekend i świętować z nami w dniu jutrzejszym zapiszcie się do listy poprawinowej.</p>
+            <p class="highlight-text" style="margin-top: 20px;">Zapisy zbieramy do 22:00</p>
+            <p style="font-size: 0.9rem; color: var(--text-light); font-style: italic;">(Lista dostępna jest na sali)</p>
+        </section>
+
+        <div class="gift-box">
+            <h3>Prezent</h3>
+            <p style="font-weight: 300;">Najlepszym prezentem jest wasza obecność, bawimy się, nie śpimy.</p>
+            <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; color: var(--accent-gold); margin-top: 20px;">Wynoszą nas za ręce i nogi.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
