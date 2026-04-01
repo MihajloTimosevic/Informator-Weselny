@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informator Weselny - Zuzia i Michał</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-green: #2d4c3b; 
             --accent-gold: #c5a059;
-            --light-bg: #fdfdfb;
+            --bg-light: #fdfdfb;
             --white: #ffffff;
-            --text-dark: #2c2c2c;
+            --text: #2c2c2c;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            background-color: var(--light-bg);
+            background-color: var(--bg-light);
+            color: var(--text);
             line-height: 1.8;
         }
 
-        /* Elegancki Header z Tłem */
+        /* Nagłówek z klimatycznym tłem */
         .hero {
-            height: 50vh;
-            background: linear-gradient(rgba(45, 76, 59, 0.4), rgba(45, 76, 59, 0.7)), 
+            height: 60vh;
+            background: linear-gradient(rgba(45, 76, 59, 0.5), rgba(45, 76, 59, 0.8)), 
                         url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
@@ -41,7 +40,7 @@
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 8vw, 4rem);
             margin: 0;
             font-weight: 400;
             letter-spacing: 2px;
@@ -51,148 +50,98 @@
             font-size: 1.1rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .container {
-            max-width: 850px;
-            margin: -50px auto 0; /* Delikatne najechanie na hero */
-            padding: 0 20px 60px;
+            max-width: 800px;
+            margin: -60px auto 40px;
+            padding: 0 20px;
         }
 
         section {
             background: var(--white);
-            padding: 50px 40px;
-            margin-bottom: 40px;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             text-align: center;
-            border-top: 1px solid rgba(197, 160, 89, 0.2);
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
             color: var(--primary-green);
-            font-size: 2rem;
-            margin-bottom: 30px;
-            position: relative;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--accent-gold);
             display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 1px;
-            background: var(--accent-gold);
-            margin: 10px auto 0;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .info-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
+            padding-bottom: 5px;
         }
 
         .time {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--accent-gold);
             display: block;
-            margin-bottom: 5px;
+            font-weight: 700;
         }
 
-        .highlight {
-            color: var(--primary-green);
-            font-weight: 600;
+        .address {
+            font-style: normal;
+            margin-top: 10px;
+            display: block;
+            color: #555;
         }
 
-        /* Naprawiona Mapa */
-        .map-wrapper {
-            margin-top: 30px;
-            border: 1px solid #eee;
-            line-height: 0;
+        /* Mapa - Fix */
+        .map-container {
+            margin: 25px 0;
             border-radius: 8px;
             overflow: hidden;
+            border: 1px solid #eee;
+            position: relative;
+            padding-bottom: 56.25%; /* Proporcje 16:9 */
+            height: 0;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         .btn-nav {
             display: inline-block;
-            margin-top: 20px;
-            padding: 14px 30px;
-            background-color: var(--primary-green);
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-nav:hover {
-            background-color: var(--accent-gold);
-            transform: translateY(-2px);
-        }
-
-        /* Sekcja Humoru */
-        .humor-section {
+            padding: 12px 25px;
             background: var(--primary-green);
             color: white;
-            padding: 60px 40px;
+            text-decoration: none;
             border-radius: 4px;
-            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        .humor-section h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--accent-gold);
-        }
+        .btn-nav:hover { background: var(--accent-gold); }
 
-        .humor-section p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin: 10px 0;
-        }
-
-        .footer-mountains {
-            height: 120px;
-            background: url('https://i.imgur.com/8N6pYpB.png') repeat-x bottom;
-            background-size: contain;
-            opacity: 0.15;
+        .highlight-box {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
             margin-top: 40px;
         }
-    </style>
-</head>
-<body>
 
-    <header class="hero">
-        <h1>Zuzia & Michał</h1>
-        <p>15 Sierpnia 2026</p>
-    </header>
+        .highlight-box h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold);
+            font-size: 1.6rem;
+        }
 
-    <div class="container">
-        
-        <section>
-            <h2>Ceremonia Zaślubin</h2>
-            <span class="time">16:00</span>
-            <p><strong>Parafia św. Jerzego i Matki Bożej Różańcowej</strong><br>
-            ul. Andersa 120, Wałbrzych</p>
-        </section>
-
-        <section>
-            <h2>Wesele</h2>
-            <p>Przyjęcie odbędzie się w <span class="highlight">Hotelu Maria</span></p>
-            <p>ul. Wrocławska 134B, 58-306 Wałbrzych</p>
-            
-            <div class="map-wrapper">
-                <iframe 
-                    src="
+        .footer-note {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 40px;
+            text-align: center;
